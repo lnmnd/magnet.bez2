@@ -1,12 +1,27 @@
 (ns magnet.bez2.core
-    (:require [reagent.core :as reagent :refer [atom]]))
+  (:require-macros [reagent.ratom  :refer [reaction]])
+  (:require [reagent.core :as reagent :refer [atom]]
+            [re-frame.core :as re-frame :refer [register-handler register-sub subscribe dispatch]]
+            [ajax.core :refer [GET]]))
+
+(register-handler
+ :init
+ (fn [db]
+   {:title "my title"}))
+
+(register-sub
+ :title
+ (fn [db]
+   (reaction (:title @db))))
 
 ;; -------------------------
 ;; Views
 
 (defn current-page []
-  [:div
-   [:div [:h2 "Welcome to magnet.bez2"]]])
+  (let [title (subscribe [:title])]
+    (fn []
+      [:div
+       [:div [:h2 @title]]])))
 
 ;; -------------------------
 ;; Initialize app
@@ -14,4 +29,5 @@
   (reagent/render [current-page] (.getElementById js/document "app")))
 
 (defn init! []
+  (dispatch [:init])
   (mount-root))
