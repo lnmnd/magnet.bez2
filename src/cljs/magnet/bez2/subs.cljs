@@ -6,3 +6,13 @@
  :title
  (fn [db]
    (reaction (:title @db))))
+
+(register-sub
+ :loading
+ (fn [db]
+   (reaction (:loading @db))))
+
+(register-sub
+ :books
+ (fn [db]
+   (reaction (:books @db))))

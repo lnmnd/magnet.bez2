@@ -12,4 +12,5 @@
 
 (defn init! []
   (dispatch [:init])
+  (dispatch [:request-books])
   (mount-root))
