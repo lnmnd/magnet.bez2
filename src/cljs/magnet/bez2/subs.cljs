@@ -15,4 +15,5 @@
 (register-sub
  :books
  (fn [db]
-   (reaction (:books @db))))
+   (let [books (reaction (:books @db))]
+     (reaction (sort :id @books)))))
