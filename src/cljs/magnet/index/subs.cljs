@@ -10,10 +10,12 @@
 (register-sub
  :index/loading
  (fn [db]
-   (reaction (:loading @db))))
+   (let [index (reaction (:index @db))]
+     (reaction (:loading @index)))))
 
 (register-sub
  :index/books
  (fn [db]
-   (let [books (reaction (:books @db))]
+   (let [index (reaction (:index @db))
+         books (reaction (:books @index))]
      (reaction (sort :id @books)))))

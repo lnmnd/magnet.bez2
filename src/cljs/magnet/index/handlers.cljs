@@ -11,11 +11,11 @@
      :keywords? true
      :handler #(dispatch [:index/process-books %])
      :error-handler #(println "do nothing")})
-   (assoc-in db [:loading] true)))
+   (assoc-in db [:index :loading] true)))
 
 (register-handler
  :index/process-books
  (fn [db [_ res]]
    (-> db
-       (assoc-in [:loading] false)
-       (assoc-in [:books] (:liburuak res)))))
+       (assoc-in [:index :loading] false)
+       (assoc-in [:index :books] (:liburuak res)))))

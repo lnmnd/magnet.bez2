@@ -5,5 +5,5 @@
  :init
  (fn [db]
    {:title "my title"
-    :loading false
-    :books []}))
+    :index {:loading false
+            :books []}}))
