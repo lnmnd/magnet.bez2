@@ -1,10 +1,10 @@
-(ns magnet.bez2.views
-  (:require [re-frame.core :as re-frame :refer [subscribe dispatch]]))
+(ns magnet.index.views
+  (:require [re-frame.core :as re-frame :refer [subscribe]]))
 
 (defn current-page []
-  (let [title (subscribe [:title])
-        loading (subscribe [:loading])
-        books (subscribe [:books])]
+  (let [title (subscribe [:index/title])
+        loading (subscribe [:index/loading])
+        books (subscribe [:index/books])]
     (fn []
       [:div
        [:div [:h2 @title]]

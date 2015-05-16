@@ -2,8 +2,9 @@
   (:require [reagent.core :as reagent :refer [atom]]
             [re-frame.core :as re-frame :refer [dispatch]]
             [magnet.bez2.handlers]
-            [magnet.bez2.subs]
-            [magnet.bez2.views :refer [current-page]]))
+            [magnet.index.handlers]
+            [magnet.index.subs]
+            [magnet.index.views :refer [current-page]]))
 
 ;; -------------------------
 ;; Initialize app
@@ -12,5 +13,5 @@
 
 (defn init! []
   (dispatch [:init])
-  (dispatch [:request-books])
+  (dispatch [:index/request-books])
   (mount-root))
