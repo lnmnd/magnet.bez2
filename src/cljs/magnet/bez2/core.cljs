@@ -2,6 +2,7 @@
   (:require [reagent.core :as reagent :refer [atom]]
             [re-frame.core :as re-frame :refer [dispatch]]
             [magnet.bez2.handlers]
+            [magnet.bez2.subs]
             [magnet.index.handlers]
             [magnet.index.subs]
             [magnet.index.views :refer [current-page]]))

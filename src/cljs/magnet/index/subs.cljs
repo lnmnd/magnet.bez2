@@ -3,11 +3,6 @@
   (:require [re-frame.core :refer [register-sub]]))
 
 (register-sub
- :index/title
- (fn [db]
-   (reaction (:title @db))))
-
-(register-sub
  :index/loading
  (fn [db]
    (let [index (reaction (:index @db))]

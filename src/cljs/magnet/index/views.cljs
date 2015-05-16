@@ -2,7 +2,7 @@
   (:require [re-frame.core :as re-frame :refer [subscribe]]))
 
 (defn current-page []
-  (let [title (subscribe [:index/title])
+  (let [title (subscribe [:title])
         loading (subscribe [:index/loading])
         books (subscribe [:index/books])]
     (fn []
