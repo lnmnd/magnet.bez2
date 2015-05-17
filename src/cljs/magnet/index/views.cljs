@@ -1,5 +1,5 @@
 (ns magnet.index.views
-  (:require [re-frame.core :as re-frame :refer [subscribe]]))
+  (:require [re-frame.core :as re-frame :refer [subscribe dispatch]]))
 
 (defn index-page []
   (let [title (subscribe [:title])
@@ -12,4 +12,4 @@
          [:p "Loading..."])
        [:ul (for [book @books]
               ^{:key (:id book)}
-              [:li (:titulua book)])]])))
+              [:li [:a {:href "#" :on-click #(dispatch [:set-active-panel :book])} (:titulua book)]])]])))
