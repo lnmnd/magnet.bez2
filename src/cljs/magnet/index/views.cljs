@@ -1,7 +1,7 @@
 (ns magnet.index.views
   (:require [re-frame.core :as re-frame :refer [subscribe]]))
 
-(defn current-page []
+(defn index-page []
   (let [title (subscribe [:title])
         loading (subscribe [:index/loading])
         books (subscribe [:index/books])]

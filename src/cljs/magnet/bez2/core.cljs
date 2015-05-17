@@ -5,7 +5,7 @@
             [magnet.bez2.subs]
             [magnet.index.handlers]
             [magnet.index.subs]
-            [magnet.index.views :refer [current-page]]))
+            [magnet.bez2.views :refer [current-page]]))
 
 ;; -------------------------
 ;; Initialize app
