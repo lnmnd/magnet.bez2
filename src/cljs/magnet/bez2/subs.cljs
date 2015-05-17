@@ -3,17 +3,11 @@
   (:require [re-frame.core :refer [register-sub]]))
 
 (register-sub
+ :active-panel
+ (fn [db]
+   (reaction (:active-panel @db))))
+
+(register-sub
  :title
  (fn [db]
    (reaction (:title @db))))
-
-(register-sub
- :loading
- (fn [db]
-   (reaction (:loading @db))))
-
-(register-sub
- :books
- (fn [db]
-   (let [books (reaction (:books @db))]
-     (reaction (sort :id @books)))))
