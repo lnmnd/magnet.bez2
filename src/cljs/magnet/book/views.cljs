@@ -8,7 +8,6 @@
       (if @loading
         [:p "Loading..."]
         [:div
-         (println @book)
          [:h2 (:titulua @book)]
          [:a {:href (:magnet @book)} [:strong "Magnet link"]]
          [:dl
