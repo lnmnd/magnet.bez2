@@ -12,4 +12,6 @@
          [:p "Loading..."])
        [:ul (for [book @books]
               ^{:key (:id book)}
-              [:li [:a {:href "#" :on-click #(dispatch [:set-active-panel :book])} (:titulua book)]])]])))
+              [:li [:a {:href "#" :on-click #(do (dispatch [:book/request-book (:id book)])
+                                                 (dispatch [:set-active-panel :book]))}
+                    (:titulua book)]])]])))

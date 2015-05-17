@@ -7,7 +7,9 @@
    {:active-panel :index
     :title "my title"
     :index {:loading false
-            :books []}}))
+            :books []}
+    :book {:loading false
+           :book {}}}))
 
 (register-handler
  :set-active-panel

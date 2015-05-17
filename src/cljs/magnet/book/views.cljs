@@ -2,8 +2,10 @@
   (:require [re-frame.core :as re-frame :refer [dispatch subscribe]]))
 
 (defn book-page []
-  (let []
+  (let [loading (subscribe [:book/loading])]
     (fn []
-      [:div
-       [:h2 "book"]
-       [:p "todo"]])))
+      (if @loading
+        [:p "Loading..."]
+        [:div
+         [:h2 "book"]
+         [:p "todo"]]))))

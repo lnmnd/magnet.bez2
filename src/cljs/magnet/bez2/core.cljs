@@ -5,6 +5,8 @@
             [magnet.bez2.subs]
             [magnet.index.handlers]
             [magnet.index.subs]
+            [magnet.book.handlers]
+            [magnet.book.subs]
             [magnet.bez2.views :refer [current-page]]))
 
 ;; -------------------------
