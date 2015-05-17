@@ -4,6 +4,7 @@
 (register-handler
  :init
  (fn [db]
-   {:title "my title"
+   {:active-panel :index
+    :title "my title"
     :index {:loading false
             :books []}}))

@@ -3,6 +3,11 @@
   (:require [re-frame.core :refer [register-sub]]))
 
 (register-sub
+ :active-panel
+ (fn [db]
+   (reaction (:active-panel @db))))
+
+(register-sub
  :title
  (fn [db]
    (reaction (:title @db))))

@@ -9,4 +9,5 @@
        [:h1 "magnet bez"]
        [:div
         [:a {:href "#"} "index"]]
-       [index-page]])))
+       (condp = @active-panel
+         :index [index-page])])))
