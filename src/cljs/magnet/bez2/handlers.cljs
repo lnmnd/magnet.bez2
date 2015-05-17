@@ -8,3 +8,8 @@
     :title "my title"
     :index {:loading false
             :books []}}))
+
+(register-handler
+ :set-active-panel
+ (fn [db [_ panel]]
+   (assoc-in db [:active-panel] panel)))
