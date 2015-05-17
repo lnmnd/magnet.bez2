@@ -18,4 +18,4 @@
  (fn [db [_ res]]
    (-> db
        (assoc-in [:book :loading] false)
-       (assoc-in [:book :books] (:liburua res)))))
+       (assoc-in [:book :book] (:liburua res)))))
