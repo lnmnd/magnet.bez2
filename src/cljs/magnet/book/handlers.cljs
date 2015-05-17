@@ -2,6 +2,15 @@
   (:require [re-frame.core :refer [register-handler dispatch]]
             [ajax.core :refer [GET]]))
 
+(defn- liburua->book [x]
+  {:title (:titulua x)
+   :magnet (:magnet x)
+   :authors (:egileak x)
+   :language (:hizkuntza x)
+   :user (:erabiltzailea x)
+   :date (:igotze_data x)
+   :synopsis (:sinopsia x)})
+
 (register-handler
  :book/request-book
  (fn [db [_ id]]
@@ -18,4 +27,4 @@
  (fn [db [_ res]]
    (-> db
        (assoc-in [:book :loading] false)
-       (assoc-in [:book :book] (:liburua res)))))
+       (assoc-in [:book :book] (liburua->book (:liburua res))))))
