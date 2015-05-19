@@ -1,15 +1,11 @@
 (ns magnet.bez2.handlers
-  (:require [re-frame.core :refer [register-handler]]))
+  (:require [re-frame.core :refer [register-handler]]
+            [magnet.bez2.db :refer [default-value]]))
 
 (register-handler
  :init
  (fn [db]
-   {:active-panel :index
-    :title "my title"
-    :index {:loading false
-            :books []}
-    :book {:loading false
-           :book {}}}))
+   default-value))
 
 (register-handler
  :set-active-panel
